@@ -35,8 +35,23 @@ def generate_launch_description():
 
     def all_nodes_launch(context, robot_namespace):
         params_file = LaunchConfiguration('params_file')
-        vocabulary_file_path = "/home/orb/ORB_SLAM3/Vocabulary/ORBvoc.txt"
-        config_file_path = "/root/colcon_ws/src/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml"
+        
+        # Update paths to use the correct location in shared volume
+        home_dir = os.environ.get('HOME', '/home/user')
+        shared_volume_path = os.path.join(home_dir, 'shared_volume')
+        
+        # Updated paths
+        vocabulary_file_path = os.path.join(shared_volume_path, 
+                                          "orb_slam3_ws/src/ORB-SLAM3-ROS2-Docker/ORB_SLAM3/Vocabulary/ORBvoc.txt")
+        config_file_path = os.path.join(shared_volume_path, 
+                                      "orb_slam3_ws/src/ORB-SLAM3-ROS2-Docker/orb_slam3_ros2_wrapper/params/gazebo_rgbd.yaml")
+        
+        # Check if files exist
+        if not os.path.exists(vocabulary_file_path):
+            print(f"WARNING: Vocabulary file not found at {vocabulary_file_path}")
+        if not os.path.exists(config_file_path):
+            print(f"WARNING: Config file not found at {config_file_path}")
+            
         declare_params_file_cmd = DeclareLaunchArgument(
             'params_file',
             default_value=os.path.join(orb_wrapper_pkg, 'params', 'rgbd-ros-params.yaml'),

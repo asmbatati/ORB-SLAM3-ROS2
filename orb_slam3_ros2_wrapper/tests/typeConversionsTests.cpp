@@ -1,7 +1,8 @@
 #include <gtest/gtest.h>
 #include <random>
 #include <Eigen/Dense>
-#include <sophus/se3.hpp>
+// Comment out system Sophus to avoid conflicts
+// #include <sophus/se3.hpp>
 #include "orb_slam3_ros2_wrapper/type_conversion.hpp"
 #include <cstddef>
 

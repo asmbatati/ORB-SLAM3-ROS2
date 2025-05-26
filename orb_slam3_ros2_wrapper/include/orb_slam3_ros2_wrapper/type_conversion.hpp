@@ -9,7 +9,8 @@
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include "sophus/se3.hpp"
+// Use ORB_SLAM3's Sophus instead of system Sophus
+// #include "sophus/se3.hpp"
 
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/pose.hpp>
@@ -23,6 +24,7 @@
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2_eigen/tf2_eigen.hpp>
 
+// Include ORB_SLAM3 headers which will bring in Sophus
 #include "MapPoint.h"
 
 namespace ORB_SLAM3_Wrapper
