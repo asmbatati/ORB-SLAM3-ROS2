@@ -2,7 +2,7 @@
 set -e
 
 # Get the actual ORB_SLAM3 library path
-ORB_SLAM3_PATH=~/shared_volume/orb_slam3_ws/src/ORB-SLAM3-ROS2/ORB_SLAM3
+ORB_SLAM3_PATH=~/shared_volume/orb_slam3_ws/src/ORB-SLAM3-ROS2-Docker/ORB_SLAM3
 ORB_SLAM3_LIB_PATH=$ORB_SLAM3_PATH/lib
 THIRD_PARTY_PATH=$ORB_SLAM3_PATH/Thirdparty
 

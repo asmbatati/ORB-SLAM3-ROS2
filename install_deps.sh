@@ -74,7 +74,7 @@ echo "Building ORB_SLAM3 and its dependencies..."
 CURRENT_DIR=$(pwd)
 
 # Navigate to ORB_SLAM3 directory
-cd ~/shared_volume/orb_slam3_ws/src/ORB-SLAM3-ROS2/ORB_SLAM3
+cd ~/shared_volume/orb_slam3_ws/src/ORB-SLAM3-ROS2-Docker/ORB_SLAM3
 
 # Function to run make install and handle the case when install target is missing
 run_make_install() {
